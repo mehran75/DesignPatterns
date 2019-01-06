@@ -5,7 +5,8 @@ import org.json.JSONObject;
 public class WebService {
 
 
-    public WebService(String host){
+    public WebService(String host)
+    {
         System.out.println("Service is Running on host: " + host);
     }
 

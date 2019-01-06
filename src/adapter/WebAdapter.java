@@ -23,8 +23,13 @@ public class WebAdapter implements WebRequester {
     }
 
     private JSONObject toJson(Object object) {
+
+        if (object == null)
+            return null;
+
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("object",object);
+
         return jsonObject;
     }
 }

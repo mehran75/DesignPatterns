@@ -30,17 +30,23 @@ public class Controller implements Initializable {
     private CheckBox checkBox;
 
 
-    private SimpleBooleanProperty check_box_observable = new SimpleBooleanProperty(false);
-    private SimpleDoubleProperty progress_value_observable = new SimpleDoubleProperty(0);
+//    private SimpleBooleanProperty check_box_observable =
+//            new SimpleBooleanProperty(false);
+
+    private SimpleDoubleProperty progress_value_observable
+            = new SimpleDoubleProperty(0);
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         progressBar.progressProperty().bind(progress_value_observable);
+
         label.visibleProperty().bind(checkBox.selectedProperty());
 
-//        start_btn.disableProperty().bind(progress_value_observable.isNotEqualTo(0));
+        start_btn
+                .disableProperty().bind(progress_value_observable
+                .isNotEqualTo(0));
 
     }
 
@@ -52,15 +58,18 @@ public class Controller implements Initializable {
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                progress_value_observable.set(progress_value_observable.get() + 0.05);
+                progress_value_observable
+                        .set(progress_value_observable.get() + 0.1);
 
                 if (progress_value_observable.get() >= 1.0) {
 //                    start_btn.setDisable(false);
                     timer.cancel();
                     progress_value_observable.set(0);
                 }
+
+
             }
-        }, 0, 500);
+        }, 0, 1000);
 
 //        start_btn.setDisable(true);
 

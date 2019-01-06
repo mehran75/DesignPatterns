@@ -13,7 +13,8 @@ public class WebClient {
     public void doWork(){
         int result = webRequester.request(makeObject());
 
-        System.out.println(result == 200 ? "Connected" : "Connection Failed!");
+        System.out.println(result == 200
+                ? "Connected" : "Connection Failed!");
 
     }
 
@@ -21,6 +22,6 @@ public class WebClient {
 
 
     public Object makeObject(){
-        return "Hey there";
+        return null;
     }
 }

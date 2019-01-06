@@ -17,7 +17,10 @@ public class Person {
 
 
 
-    public Person(String first_name, String mid_name, String last_name, int age, int tall, int weight, Gender gender) {
+    public Person(String first_name,
+                  String mid_name, String last_name,
+                  int age, int tall, int weight, Gender gender) {
+
         this.first_name = first_name;
         this.mid_name = mid_name;
         this.last_name = last_name;
@@ -37,7 +40,9 @@ public class Person {
      * @param gender: gender of person
      *
      * */
-    public Person(String first_name, String mid_name, String last_name, Gender gender) {
+    public Person(String first_name,
+                  String mid_name, String last_name,
+                  Gender gender) {
         this.first_name = first_name;
         this.mid_name = mid_name;
         this.last_name = last_name;
@@ -57,7 +62,6 @@ public class Person {
         this.weight = builder.weight;
         this.gender = builder.gender;
     }
-
 
 
     public String getFirst_name() {
@@ -154,12 +158,16 @@ public class Person {
         private Gender gender;
 
 
-        public Builder setFirst_name(String first_name) {
+        public Builder setFirst_name(String first_name,String mid_name,
+                                     String last_name,
+                                     Gender gender) {
             this.first_name = first_name;
+            this.mid_name = mid_name;
+            this.last_name = last_name;
+            this.gender = gender;
 
             return this;
         }
-
 
         public Builder setMid_name(String mid_name) {
             this.mid_name = mid_name;

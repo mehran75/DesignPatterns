@@ -15,4 +15,10 @@ public class BmwM5Builder extends CarBuilder {
     public CarBuilderInterface setFactory(String factory) {
         return super.setFactory("BMW");
     }
+
+
+    @Override
+    public CarBuilderInterface setType(Car.Type type) {
+        return super.setType(Car.Type.Sport);
+    }
 }

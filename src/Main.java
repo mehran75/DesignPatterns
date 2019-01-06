@@ -34,25 +34,28 @@ public class Main extends Application {
 
 
         Person mehran =
-                new Person("Mehran","","Rafiee",22,183,65, Person.Gender.MALE);
+                new Person("Mehran",
+                        "","Rafiee",
+                        22,183,65, Person.Gender.MALE);
 
         Person mehran_with_builder = new Person.Builder()
-                .setFirst_name("mehran")
-                .setMid_name("")
-                .setLast_name("Rafiee")
+                .setFirst_name("mehran",
+                        "","Rafiee", Person.Gender.MALE)
                 .setAge(22)
                 .setWeight(65)
                 .setTall(183)
                 .setGender(Person.Gender.MALE)
                 .build();
-
+//
 //        System.out.println(mehran);
 //        System.out.println(mehran_with_builder);
 
 
 //        Car
-        Car car = new Car(Car.Type.SUV,"white","Sorento","KIA",4);
-
+        Car car = new Car(Car.Type.SUV,
+                "white","Sorento",
+                "KIA",4);
+//
         Car custom_car = new CarBuilder()
                 .setModel_name("MadeUpName")
                 .setFactory("Mine")
@@ -60,11 +63,11 @@ public class Main extends Application {
                 .setColor("blue")
                 .setType(Car.Type.Crossover)
                 .build();
-
+//
         Car bmw_m5 = new BmwM5Builder()
-                .setColor("Black")
+                .setColor("Black").setFactory("P")
                 .build();
-
+//
 //        System.out.println(car);
 //        System.out.println(custom_car);
 //        System.out.println(bmw_m5);
@@ -76,11 +79,13 @@ public class Main extends Application {
          * ==============================================================================*/
 
         WebService service = new WebService("127.0.0.1");
+
+
         WebAdapter adapter = new WebAdapter();
         WebClient client = new WebClient(adapter);
 
         adapter.connect(service);
-//        client.doWork();
+        client.doWork();
 
         /*==============================================================================
          *                         Observable Design Pattern
